@@ -1,0 +1,16 @@
+{
+    "CN": "kubernetes",
+    "key": {
+        "algo": "ecdsa",
+        "size": 256
+    },
+    "names": [
+        {
+            "C": "CN",
+            "ST": "BJ",
+            "L": "BJ",
+            "O": "k8s"
+        }
+    ]
+}
+
