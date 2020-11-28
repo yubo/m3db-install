@@ -35,3 +35,15 @@ install
 # status
 status
 ```
+
+## install path
+```
+# database path
+/home/etcd
+/home/m3db
+/home/m3kv
+
+# config path
+/etc/etcd/
+/etc/m3db/
+```

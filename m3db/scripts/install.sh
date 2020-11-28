@@ -1,15 +1,20 @@
 #!/bin/bash
 
-CWD=$(cd $(dirname $0)/; pwd)
-cd $CWD
+OLDPATH=`pwd`
+ROOT=`cd $(dirname $0)/..; pwd`
+cd ${ROOT}
+function finish {
+    cd ${OLDPATH} 
+}
+trap finish EXIT
 
 systemctl stop m3dbnode
 
 mkdir -p /home/{m3db,m3kv}
 mkdir -p /etc/m3db
 
-cp -af ../usr_bin/* /usr/bin/
-cp -af ../etc/*.yml /etc/m3db/
+cp -af ./usr_bin/* /usr/bin/
+cp -af ./etc/*.yml /etc/m3db/
 
 sysctl -w vm.max_map_count=3000000
 sysctl -w vm.swappiness=1
